@@ -131,7 +131,7 @@ namespace TheOtherRoles
             Vector3 positionOffsetValue = positionOffset ?? button.PositionOffset;  // For non custom buttons, we can set these manually.
             positionOffsetValue.z = -0.1f;
             couldUse = couldUse ?? button.CouldUse;
-            CustomButton replacementHandcuffedButton = new CustomButton(() => { }, () => { return true; }, couldUse, () => { }, Deputy.getHandcuffedButtonSprite(), positionOffsetValue, button.hudManager, button.hotkey,
+            CustomButton replacementHandcuffedButton = new CustomButton(() => { }, () => { return true; }, couldUse, () => { }, Deputy.getHandcuffedButtonSprite(), positionOffsetValue, button.hudManager, button.actionName,
                 true, Deputy.handcuffDuration, () => { }, button.mirror);
             replacementHandcuffedButton.Timer = replacementHandcuffedButton.EffectDuration;
             replacementHandcuffedButton.actionButton.cooldownTimerText.color = new Color(0F, 0.8F, 0F);
@@ -242,7 +242,7 @@ namespace TheOtherRoles
                 Engineer.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Janitor Clean
@@ -278,7 +278,7 @@ namespace TheOtherRoles
                 Janitor.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Sheriff Kill
@@ -316,7 +316,7 @@ namespace TheOtherRoles
                 __instance.KillButton.graphic.sprite,
                 new Vector3(0f, 1f, 0),
                 __instance,
-                KeyCode.Q
+                "ActionSecondary"
             );
 
             // Deputy Handcuff
@@ -341,7 +341,7 @@ namespace TheOtherRoles
                 Deputy.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
             // Deputy Handcuff button handcuff counter
             deputyButtonHandcuffsText = GameObject.Instantiate(deputyHandcuffButton.actionButton.cooldownTimerText, deputyHandcuffButton.actionButton.cooldownTimerText.transform.parent);
@@ -367,7 +367,7 @@ namespace TheOtherRoles
                 TimeMaster.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F, 
+                "ActionQuaternary", 
                 true,
                 TimeMaster.shieldDuration,
                 () => { timeMasterShieldButton.Timer = timeMasterShieldButton.MaxTimer; }
@@ -393,7 +393,7 @@ namespace TheOtherRoles
                 Medic.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             
@@ -411,7 +411,7 @@ namespace TheOtherRoles
                 Shifter.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Morphling morph
@@ -463,7 +463,7 @@ namespace TheOtherRoles
                 Morphling.getSampleSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Morphling.duration,
                 () => {
@@ -496,7 +496,7 @@ namespace TheOtherRoles
                 Camouflager.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Camouflager.duration,
                 () => { camouflagerButton.Timer = camouflagerButton.MaxTimer; }
@@ -517,7 +517,7 @@ namespace TheOtherRoles
                 Hacker.getButtonSprite(),
                 new Vector3(0f, 1f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 0f,
                 () => { hackerButton.Timer = hackerButton.MaxTimer;}
@@ -545,7 +545,7 @@ namespace TheOtherRoles
                Hacker.getAdminSprite(),
                new Vector3(-1.8f, -0.06f, 0),
                __instance,
-               KeyCode.Q,
+               "ActionSecondary",
                true,
                0f,
                () => { 
@@ -606,7 +606,7 @@ namespace TheOtherRoles
                Hacker.getVitalsSprite(),
                new Vector3(-2.7f, -0.06f, 0),
                __instance,
-               KeyCode.Q,
+               "ActionSecondary",
                true,
                0f,
                () => { 
@@ -642,7 +642,7 @@ namespace TheOtherRoles
                 Tracker.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             trackerTrackCorpsesButton = new CustomButton(
@@ -657,7 +657,7 @@ namespace TheOtherRoles
                 Tracker.getTrackCorpsesButtonSprite(),
                 new Vector3(-2.7f, -0.06f, 0),
                 __instance,
-                KeyCode.Q,
+                "ActionSecondary",
                 true,
                 Tracker.corpsesTrackingDuration,
                 () => {
@@ -729,7 +729,7 @@ namespace TheOtherRoles
                 Vampire.getButtonSprite(),
                 new Vector3(0, 1f, 0),
                 __instance,
-                KeyCode.Q,
+                "ActionSecondary",
                 false,
                 0f,
                 () => {
@@ -780,7 +780,7 @@ namespace TheOtherRoles
                 Portalmaker.getPlacePortalButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             usePortalButton = new CustomButton(
@@ -818,7 +818,7 @@ namespace TheOtherRoles
                 Portalmaker.getUsePortalButtonSprite(),
                 new Vector3(0.9f, -0.06f, 0),
                 __instance,
-                KeyCode.H,
+                "ActionQuaternary", // TODO: find a way to put back the right button (needs to add an entry in the rewired input manager)
                 mirror: true
             );
 
@@ -836,7 +836,7 @@ namespace TheOtherRoles
                 Jackal.getSidekickButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Jackal Kill
@@ -853,7 +853,7 @@ namespace TheOtherRoles
                 __instance.KillButton.graphic.sprite,
                 new Vector3(0, 1f, 0),
                 __instance,
-                KeyCode.Q
+                "ActionSecondary"
             );
             
             // Sidekick Kill
@@ -869,7 +869,7 @@ namespace TheOtherRoles
                 __instance.KillButton.graphic.sprite,
                 new Vector3(0, 1f, 0),
                 __instance,
-                KeyCode.Q
+                "ActionSecondary"
             );
 
             // Lighter light
@@ -887,7 +887,7 @@ namespace TheOtherRoles
                 Lighter.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Lighter.duration,
                 () => { lighterButton.Timer = lighterButton.MaxTimer; }
@@ -910,7 +910,7 @@ namespace TheOtherRoles
                 Eraser.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             placeJackInTheBoxButton = new CustomButton(
@@ -933,7 +933,7 @@ namespace TheOtherRoles
                 Trickster.getPlaceBoxButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
             
             lightsOutButton = new CustomButton(
@@ -952,7 +952,7 @@ namespace TheOtherRoles
                 Trickster.getLightsOutButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Trickster.lightsOutDuration,
                 () => { lightsOutButton.Timer = lightsOutButton.MaxTimer; }
@@ -991,7 +991,7 @@ namespace TheOtherRoles
                 Cleaner.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Warlock curse
@@ -1035,7 +1035,7 @@ namespace TheOtherRoles
                 Warlock.getCurseButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Security Guard button
@@ -1074,7 +1074,7 @@ namespace TheOtherRoles
                 SecurityGuard.getPlaceCameraButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
             
             // Security Guard button screws counter
@@ -1129,7 +1129,7 @@ namespace TheOtherRoles
                 SecurityGuard.getCamSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.Q,
+                "ActionSecondary",
                 true,
                 0f,
                 () => {
@@ -1185,7 +1185,7 @@ namespace TheOtherRoles
                 Arsonist.getDouseSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Arsonist.duration,
                 () => {
@@ -1238,7 +1238,7 @@ namespace TheOtherRoles
                 Vulture.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Medium button
@@ -1266,7 +1266,7 @@ namespace TheOtherRoles
                 Medium.getQuestionSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Medium.duration,
                 () => {
@@ -1349,7 +1349,7 @@ namespace TheOtherRoles
                 Pursuer.getTargetSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             // Pursuer button blanks left
@@ -1384,7 +1384,7 @@ namespace TheOtherRoles
                 Witch.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Witch.spellCastingDuration,
                 () => {
@@ -1485,7 +1485,7 @@ namespace TheOtherRoles
                 Ninja.getMarkButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F                   
+                "ActionQuaternary"                   
             );
 
             mayorMeetingButton = new CustomButton(
@@ -1513,7 +1513,7 @@ namespace TheOtherRoles
                Mayor.getMeetingSprite(),
                new Vector3(-1.8f, -0.06f, 0),
                __instance,
-               KeyCode.F,
+               "ActionQuaternary",
                true,
                0f,
                () => {},
