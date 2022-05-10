@@ -531,22 +531,6 @@ namespace TheOtherRoles {
             int counter = TheOtherRolesPlugin.optionsPage;
             string hudString = counter != 0 ? Helpers.cs(DateTime.Now.Second % 2 == 0 ? Color.white : Color.red, "(Use scroll wheel if necessary)\n\n") : "";
 
-            try
-            {
-                // TheOtherRolesPlugin.Logger.LogWarning(" == début");
-                int i = 0;
-                while (true)
-                {
-                    var e = Rewired.ReInput.mapping.Actions[i];
-                    // TheOtherRolesPlugin.Logger.LogWarning($"Action {i}: {e.name} {e.descriptiveName} ");
-                    i++;
-                }
-            }
-            finally
-            {
-                // TheOtherRolesPlugin.Logger.LogWarning(" == fin");
-            }
-            
             switch (counter) {
                 case 0:
                     hudString += "Page 1: Vanilla Settings \n\n" + __result;
