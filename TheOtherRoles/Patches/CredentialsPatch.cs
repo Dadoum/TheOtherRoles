@@ -20,8 +20,7 @@ Design by <color=#FCCE03FF>Bavari</color></size>";
 $@"Modded by <color=#FCCE03FF>Eisbison</color>, <color=#FCCE03FF>Thunderstorm584</color>, <color=#FCCE03FF>EndOfFile</color>, <color=#FCCE03FF>Mallöris</color> & <color=#FCCE03FF>Gendelo</color>
 Design by <color=#FCCE03FF>Bavari</color>";
 
-    public static string contributorsCredentials =
-        $@"<size=60%> <color=#FCCE03FF>Special thanks to K3ndo & Smeggy</color></size>";
+        public static string contributorsCredentials = $@"<size=60%> <color=#FCCE03FF>Special thanks to K3ndo & Smeggy</color> ";
 
         [HarmonyPatch(typeof(VersionShower), nameof(VersionShower.Start))]
         private static class VersionShowerPatch
