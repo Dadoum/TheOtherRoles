@@ -448,7 +448,7 @@ namespace TheOtherRoles
                 Shifter.getButtonSprite(),
                 new Vector3(0, 0.73f, 0),
                 __instance,
-                null,
+                hotkey: null,
                 true
             );
 
@@ -1783,7 +1783,7 @@ namespace TheOtherRoles
                 Hunter.getArrowSprite(),
                 new Vector3(-2.7f, 1f, 0),
                 __instance,
-                KeyCode.R,
+                "ActionTertiary",
                 true,
                 Hunter.ArrowDuration,
                 () => {
