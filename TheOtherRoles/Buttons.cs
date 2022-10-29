@@ -1623,7 +1623,7 @@ namespace TheOtherRoles
                 Trapper.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F
+                "ActionQuaternary"
             );
 
             thiefKillButton = new CustomButton(
@@ -1673,7 +1673,7 @@ namespace TheOtherRoles
                __instance.KillButton.graphic.sprite,
                new Vector3(0, 1f, 0),
                __instance,
-               KeyCode.Q
+                "ActionSecondary"
                );
 
             // Trapper Charges
@@ -1721,7 +1721,7 @@ namespace TheOtherRoles
                 Lighter.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Hunter.lightDuration,
                 () => {
@@ -1816,7 +1816,7 @@ namespace TheOtherRoles
                 TimeMaster.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
-                KeyCode.F,
+                "ActionQuaternary",
                 true,
                 Hunted.shieldDuration,
                 () => {
