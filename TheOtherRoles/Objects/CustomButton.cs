@@ -72,7 +72,7 @@ namespace TheOtherRoles.Objects {
         }      
         
         public CustomButton(Action OnClick, Func<bool> HasButton, Func<bool> CouldUse, Action OnMeetingEnds, Sprite Sprite, Vector3 PositionOffset, HudManager hudManager, string actionName, bool HasEffect, float EffectDuration, Action OnEffectEnds, bool mirror = false, string buttonText = "")
-            : this(OnClick, HasButton, CouldUse, OnMeetingEnds, Sprite, PositionOffset, hudManager, false, 0f, () => {}, mirror, buttonText)
+            : this(OnClick, HasButton, CouldUse, OnMeetingEnds, Sprite, PositionOffset, hudManager, HasEffect, EffectDuration, OnEffectEnds, mirror, buttonText)
         {
             this.actionName = actionName;
         }
@@ -81,7 +81,7 @@ namespace TheOtherRoles.Objects {
         : this(OnClick, HasButton, CouldUse, OnMeetingEnds, Sprite, PositionOffset, hudManager, actionName, false, 0f, () => {}, mirror, buttonText) { }      
         
         public CustomButton(Action OnClick, Func<bool> HasButton, Func<bool> CouldUse, Action OnMeetingEnds, Sprite Sprite, Vector3 PositionOffset, HudManager hudManager, KeyCode? hotkey, bool HasEffect, float EffectDuration, Action OnEffectEnds, bool mirror = false, string buttonText = "")
-            : this(OnClick, HasButton, CouldUse, OnMeetingEnds, Sprite, PositionOffset, hudManager, false, 0f, () => {}, mirror, buttonText)
+            : this(OnClick, HasButton, CouldUse, OnMeetingEnds, Sprite, PositionOffset, hudManager, HasEffect, EffectDuration, OnEffectEnds, mirror, buttonText)
         {
             this.hotkey = hotkey;
         }
