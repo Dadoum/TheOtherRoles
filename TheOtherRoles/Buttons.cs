@@ -869,7 +869,7 @@ namespace TheOtherRoles
                 Portalmaker.getUsePortalButtonSprite(),
                 new Vector3(0.9f, -0.06f, 0),
                 __instance,
-                KeyCode.H,
+                "UsePortal",
                 mirror: true
             );
 
@@ -1752,7 +1752,7 @@ namespace TheOtherRoles
                Hacker.getAdminSprite(),
                new Vector3(-2.7f, -0.06f, 0),
                __instance,
-               KeyCode.G,
+               "HunterAdmin",
                true,
                Hunter.AdminDuration,
                () => {
